@@ -73,15 +73,16 @@ module Surak
   end
 
   def self.new(name)
-    puts "creating new surak project: #{name}"
-    gem_dir = Gem::Specification.find_by_name("bang").gem_dir
-    template_dir = gem_dir + '/template'
+    puts "creating new project: #{name}"
+    gem_dir = Gem::Specification.find_by_name("surak").gem_dir
+    template_dir = gem_dir + '/lib/template'
     if !File.exist?(name)
       `mkdir #{name}`
       `cp -a #{template_dir+"/."} #{name}/.`
-      `cd #{name}`
-      `npm install`
-      `bower install`
+      Dir.chdir(name) do
+        `npm install`
+        `bower install`
+      end
     else
       puts "File/Folder already exists with name: #{name}"
     end
