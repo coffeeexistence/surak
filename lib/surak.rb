@@ -23,7 +23,7 @@ module Surak
 
   class Server
     attr_accessor :server
-    def initialize(serving_directory_path: "./dist", mounting_point: "/", port: 3337)
+    def initialize(serving_directory_path: "./dist", mounting_point: "/", port: 8080)
       self.server = WEBrick::HTTPServer.new :Port => port
       server.mount mounting_point, NonCachingFileHandler , serving_directory_path
       trap('INT') { server.stop }
