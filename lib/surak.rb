@@ -92,8 +92,8 @@ module Surak
     if File.exist?("surak.json")
       puts "In correct directory"
 
-      monitor = surak::FileWatcherWrapper.new
-      server = surak::Server.new
+      monitor = Surak::FileWatcherWrapper.new
+      server = Surak::Server.new
 
       monitor_l = lambda { monitor.start }
       server_l = lambda { server.start }
