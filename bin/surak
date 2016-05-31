@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+require 'surak'
+args = ARGV
+
+if args.length == 0
+  Surak.start
+elsif args[0] == "new"
+  name = "Untitled surak Project"
+  name = args[1] if args[1]
+  Surak.new(name)
+end

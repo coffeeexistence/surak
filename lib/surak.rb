@@ -1,4 +1,4 @@
-require "bang/version"
+require "surak/version"
 require "filewatcher"
 require 'webrick'
 require 'parallel'
@@ -19,11 +19,11 @@ class NonCachingFileHandler < WEBrick::HTTPServlet::FileHandler
 
 end
 
-module Bang
+module Surak
 
   class Server
     attr_accessor :server
-    def initialize(serving_directory_path: "./dist", mounting_point: "/", port: 1337)
+    def initialize(serving_directory_path: "./dist", mounting_point: "/", port: 3337)
       self.server = WEBrick::HTTPServer.new :Port => port
       server.mount mounting_point, NonCachingFileHandler , serving_directory_path
       trap('INT') { server.stop }
@@ -40,14 +40,14 @@ module Bang
     def initialize
       self.files_to_monitor = [
         'src',
-        'BANG/dependencies.json'
+        'surak.json'
       ]
       self.grunt
     end
 
     def grunt
       grunt_output = `grunt`
-      puts "\n\n #{grunt_output}\n\n"
+      puts "\n#{grunt_output}\n"
     end
 
     def start
@@ -64,14 +64,26 @@ module Bang
         self.grunt
       end
     end
+
+  end
+
+  def self.install
+    `sudo npm install -g bower`
+    `sudo npm install -g grunt`
+  end
+
+  def self.new(name)
+    puts "creating new surak project: #{name}"
+    require 'pry'
+    binding.pry
   end
 
   def self.start
-    if Dir.exist?("BANG")
+    if File.exist?("surak.json")
       puts "In correct directory"
 
-      monitor = Bang::FileWatcherWrapper.new
-      server = Bang::Server.new
+      monitor = surak::FileWatcherWrapper.new
+      server = surak::Server.new
 
       monitor_l = lambda { monitor.start }
       server_l = lambda { server.start }
@@ -79,10 +91,11 @@ module Bang
 
       Parallel.each(processes) {|process| process.call }
     else
-      puts "You must be in the root directory of a BANG project to run this."
+      puts "You must be in the root directory of a surak project to run this."
       puts "You are currently in #{Dir.pwd}"
     end
   end
+
 
 
 end

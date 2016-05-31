@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in bang.gemspec
+# Specify your gem's dependencies in surak.gemspec
 gemspec

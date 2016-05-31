@@ -1,3 +1,3 @@
-module Bang
+module Surak
   VERSION = "0.1.0"
 end
