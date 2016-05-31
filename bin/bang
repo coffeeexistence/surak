@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require 'bang'
+
+Bang.start
