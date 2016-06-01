@@ -1,24 +1,22 @@
 # surak
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/surak`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Surak a quick and easy platform for creating production-ready angular apps with Bower and Grunt.
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'surak'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+Install:
 
     $ gem install surak
+
+And then move to the folder where you'd like to create a new project and execute:
+
+    $ surak new *project-name*
+
+Then move into your new project folder and run:
+
+    $ surak
+
+Surak will automatically set up a server at *localhost:8080* and will run 'grunt' whenever a file is modified in *src* or *surak.json*
 
 ## Usage
 
@@ -38,4 +36,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
