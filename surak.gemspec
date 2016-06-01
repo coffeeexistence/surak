@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["askinganthony@gmail.com"]
 
   spec.summary       = "Ruby Gem for surak, a quick and easy platform for creating production-ready angular apps."
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/coffeeexistence/surak"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
