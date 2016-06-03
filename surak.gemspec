@@ -10,6 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["askinganthony@gmail.com"]
 
   spec.summary       = "Ruby Gem for surak, a quick and easy platform for creating production-ready angular apps."
+  spec.description   = "Surak, named after the greatest vulcan philisopher, provides a way to get front-end only apps off the ground quickly and with ease, run 'surak' in a surak project folder for a server which can serve your files and compile assets at the same time!"
   spec.homepage      = "https://github.com/coffeeexistence/surak"
   spec.license       = "MIT"
 
