@@ -8,4 +8,8 @@ elsif args[0] == "new"
   name = "untitled_surak_project"
   name = args[1] if args[1]
   Surak.new(name)
+elsif args[0] == "install"
+  puts "Installing Surak's dependecies"
+  puts "npm must be installed before doing this step, if you don't already have it installed.\n"
+  Surak.install
 end

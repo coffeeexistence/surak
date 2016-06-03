@@ -68,7 +68,9 @@ module Surak
   end
 
   def self.install
+    puts "Installing Bower via npm"
     `sudo npm install -g bower`
+    puts "Installing Grunt via npm"
     `sudo npm install -g grunt`
   end
 
@@ -80,7 +82,9 @@ module Surak
       `mkdir #{name}`
       `cp -a #{template_dir+"/."} #{name}/.`
       Dir.chdir(name) do
+        puts "Running: 'npm install'"
         `npm install`
+        puts "Running: 'bower install'"
         `bower install`
       end
     else

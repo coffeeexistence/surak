@@ -18,9 +18,9 @@ Then move into your new project folder and run:
 
 Surak will automatically set up a server at *localhost:8080* and will run 'grunt' whenever a file is modified in *src* or *surak.json*
 
-## Usage
+## Documentation
 
-TODO: Write usage instructions here
+[Documentation can be found here.](http://johnanthony-dev.com/surak/)
 
 ## Development
 
